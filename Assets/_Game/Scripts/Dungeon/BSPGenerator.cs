@@ -815,14 +815,14 @@ namespace AngelGuardian.Dungeon
         private void ApplyGameConfig(GameConfig config)
         {
             // 从GameConfig读取参数(如果存在)
-            if (config.mapSize > 0) mapSize = config.mapSize;
+            if (config.MapSize > 0) mapSize = config.MapSize;
             if (config.maxSplitDepth > 0) maxSplitDepth = config.maxSplitDepth;
             if (config.targetRoomCount > 0) targetRoomCount = config.targetRoomCount;
-            if (config.minRoomSize > 0) minRoomSize = config.minRoomSize;
-            if (config.corridorWidth > 0)
+            if (config.MinRoomSize > 0) minRoomSize = config.MinRoomSize;
+            if (config.CorridorWidth > 0)
             {
-                corridorMinWidth = config.corridorWidth;
-                corridorMaxWidth = Mathf.RoundToInt(config.corridorWidth * 1.5f);
+                corridorMinWidth = config.CorridorWidth;
+                corridorMaxWidth = Mathf.RoundToInt(config.CorridorWidth * 1.5f);
             }
             if (config.doorFrequency > 0) doorPlacementChance = config.doorFrequency;
             if (config.safeZoneRadius > 0) safeZoneRadius = config.safeZoneRadius;

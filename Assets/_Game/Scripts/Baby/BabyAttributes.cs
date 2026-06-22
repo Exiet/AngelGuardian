@@ -138,8 +138,8 @@ namespace AngelGuardian.Baby
             var config = GameManager.Instance?.Config;
             if (config != null)
             {
-                _BabyMaxMentalPower = config.babyMaxMentalPower;
-                _emotionTickRate = config.emotionTickRate;
+                _BabyMaxMentalPower = config.BabyMaxMentalPower;
+                _emotionTickRate = config.EmotionTickRate;
             }
 
             _currentMentalHP = _BabyMaxMentalPower;

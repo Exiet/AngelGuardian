@@ -66,7 +66,7 @@ namespace AngelGuardian.Weapons
             get
             {
                 var config = GameManager.Instance?.Config;
-                return config != null ? config.maxWeapons : 6;
+                return config != null ? config.MaxWeapons : 6;
             }
         }
 

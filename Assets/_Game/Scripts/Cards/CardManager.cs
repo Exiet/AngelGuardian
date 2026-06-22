@@ -110,7 +110,7 @@ namespace AngelGuardian.Cards
             get
             {
                 var config = GameManager.Instance?.Config;
-                return config != null ? config.maxCards : 10;
+                return config != null ? config.MaxCards : 10;
             }
         }
 

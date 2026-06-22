@@ -241,7 +241,7 @@ namespace AngelGuardian.Player
         /// <param name="cardBonuses">卡牌提供的额外倍率（默认1.0）</param>
         public float CalculateExpGrowthMultiplier(int level = 1, float cardBonuses = 1.0f)
         {
-            float baseMultiplier = Core.GameManager.Instance?.Config?.expGrowthMultiplier ?? 1.0f;
+            float baseMultiplier = Core.GameManager.Instance?.Config?.ExpGrowthMultiplier ?? 1.0f;
             float levelFactor = 1f + (level - 1) * 0.02f;
             float result = baseMultiplier * levelFactor * cardBonuses * ExpBonus;
 

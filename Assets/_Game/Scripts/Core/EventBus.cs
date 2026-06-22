@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using AngelGuardian.Enemies;
 
 namespace AngelGuardian.Core
 {
@@ -191,7 +192,11 @@ namespace AngelGuardian.Core
         #region Public API – Convenience Fire Methods
 
         public void FireEnemyKilled(GameObject enemy, Vector3 position)
-            => EnemyBase.TriggerEnemyKilled(enemy, position);
+        {
+            var eb = enemy.GetComponent<EnemyBase>();
+            if (eb != null)
+                EnemyBase.TriggerEnemyKilled(eb.enemyId, eb.enemyName, position);
+        }
 
         public void FireLevelUp(int newLevel)
             => OnLevelUp?.Invoke(newLevel);

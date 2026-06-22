@@ -311,7 +311,7 @@ namespace AngelGuardian.Core
             if (_currentState != GameState.Playing)
                 return;
 
-            float multiplier = Config != null ? Config.expGrowthMultiplier : 1f;
+            float multiplier = Config != null ? Config.ExpGrowthMultiplier : 1f;
             _currentExp += amount * multiplier;
 
             // Handle potential multiple level-ups in one call
@@ -412,7 +412,7 @@ namespace AngelGuardian.Core
         private float CalculateExpToNextLevel(int level)
         {
             // Base 100 + quadratic scaling
-            float multiplier = Config != null ? Config.expGrowthMultiplier : 1f;
+            float multiplier = Config != null ? Config.ExpGrowthMultiplier : 1f;
             return (100f + level * level * 15f) / multiplier;
         }
 
