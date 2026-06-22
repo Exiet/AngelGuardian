@@ -165,7 +165,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                 var projectileRb = projectile.GetComponent<Rigidbody2D>();
                 if (projectileRb != null)
                 {
-                    projectileRb.linearVelocity = direction * projectileSpeed;
+                    projectileRb.velocity = direction * projectileSpeed;
                 }
 
                 // 设置弹丸伤害

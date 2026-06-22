@@ -119,7 +119,7 @@ namespace AngelGuardian.Enemies.EnemyAI
 
             if (rb != null)
             {
-                rb.linearVelocity = fleeDirection * moveSpeed * difficultySpeedModifier * fleeSpeedMultiplier;
+                rb.velocity = fleeDirection * moveSpeed * difficultySpeedModifier * fleeSpeedMultiplier;
                 UpdateFacing(fleeDirection.x);
             }
         }
@@ -137,7 +137,7 @@ namespace AngelGuardian.Enemies.EnemyAI
             if (isCharging && currentTarget != null)
             {
                 // 冲锋移动
-                rb.linearVelocity = chargeDirection * moveSpeed * difficultySpeedModifier * chargeSpeedMultiplier;
+                rb.velocity = chargeDirection * moveSpeed * difficultySpeedModifier * chargeSpeedMultiplier;
                 UpdateFacing(chargeDirection.x);
             }
             else

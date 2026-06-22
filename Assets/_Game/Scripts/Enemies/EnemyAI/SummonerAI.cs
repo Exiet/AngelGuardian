@@ -169,7 +169,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                 var rb2d = projectile.GetComponent<Rigidbody2D>();
                 if (rb2d != null)
                 {
-                    rb2d.linearVelocity = direction * 8f;
+                    rb2d.velocity = direction * 8f;
                 }
                 var proj = projectile.GetComponent<Projectile>();
                 if (proj != null)

@@ -192,7 +192,7 @@ namespace AngelGuardian.Enemies.EnemyAI
             {
                 Vector2 direction = ((Vector2)currentTarget.position - rb.position).normalized;
                 float speed = moveSpeed * difficultySpeedModifier * (isBerserk ? berserkSpeedMultiplier : 1f);
-                rb.linearVelocity = direction * speed;
+                rb.velocity = direction * speed;
                 UpdateFacing(direction.x);
             }
         }

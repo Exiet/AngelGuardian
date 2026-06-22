@@ -319,7 +319,7 @@ namespace AngelGuardian.Enemies.EnemyAI
             // 触手固定在原位，不移动
             if (rb != null)
             {
-                rb.linearVelocity = Vector2.zero;
+                rb.velocity = Vector2.zero;
             }
         }
 

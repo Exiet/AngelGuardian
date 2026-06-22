@@ -432,9 +432,9 @@ namespace AngelGuardian.Enemies
             {
                 foreach (var drop in bossSpecialDrops)
                 {
-                    if (drop != null && Random.value <= guaranteedDropChance)
+                    if (drop != null && UnityEngine.Random.value <= guaranteedDropChance)
                     {
-                        Instantiate(drop, transform.position + (Vector3)(Random.insideUnitCircle * 1f), Quaternion.identity);
+                        Instantiate(drop, transform.position + (Vector3)(UnityEngine.Random.insideUnitCircle * 1f), Quaternion.identity);
                     }
                 }
             }

@@ -172,7 +172,7 @@ namespace AngelGuardian.Enemies.EnemyAI
 
             if (rb != null)
             {
-                rb.linearVelocity = direction * diveSpeed;
+                rb.velocity = direction * diveSpeed;
             }
             UpdateFacing(direction.x);
 
@@ -196,7 +196,7 @@ namespace AngelGuardian.Enemies.EnemyAI
             if (rb != null)
             {
                 Vector2 direction = (pullTarget - (Vector2)transform.position).normalized;
-                rb.linearVelocity = direction * diveSpeed * 0.7f;
+                rb.velocity = direction * diveSpeed * 0.7f;
             }
 
             // 到达拉起高度后返回绕圈
@@ -270,7 +270,7 @@ namespace AngelGuardian.Enemies.EnemyAI
         /// </summary>
         private void CheckWallAvoidance()
         {
-            Vector2 forward = rb != null ? rb.linearVelocity.normalized : Vector2.right;
+            Vector2 forward = rb != null ? rb.velocity.normalized : Vector2.right;
             if (forward.magnitude < 0.1f) return;
 
             RaycastHit2D hit = Physics2D.Raycast(transform.position, forward, 2f, wallLayer);

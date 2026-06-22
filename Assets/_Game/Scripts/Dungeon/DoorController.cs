@@ -504,8 +504,8 @@ namespace AngelGuardian.Dungeon
             {
                 // 略微位移表示被摧毁
                 doorVisual.localPosition = closedLocalPosition + new Vector3(
-                    Random.Range(-0.3f, 0.3f),
-                    Random.Range(-0.3f, 0.3f),
+                    UnityEngine.Random.Range(-0.3f, 0.3f),
+                    UnityEngine.Random.Range(-0.3f, 0.3f),
                     0
                 );
             }

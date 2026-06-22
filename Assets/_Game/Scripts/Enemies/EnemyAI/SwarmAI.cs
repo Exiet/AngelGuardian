@@ -318,7 +318,7 @@ namespace AngelGuardian.Enemies.EnemyAI
 
             if (rb != null)
             {
-                rb.linearVelocity = scatterDirection * moveSpeed * difficultySpeedModifier * scatterSpeedMultiplier;
+                rb.velocity = scatterDirection * moveSpeed * difficultySpeedModifier * scatterSpeedMultiplier;
             }
 
             if (scatterTimer <= 0f)

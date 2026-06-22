@@ -254,7 +254,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                     speedMultiplier *= difficultySpeedModifier;
                 }
 
-                rb.linearVelocity = direction * moveSpeed * speedMultiplier;
+                rb.velocity = direction * moveSpeed * speedMultiplier;
                 UpdateFacing(direction.x);
             }
             else

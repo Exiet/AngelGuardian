@@ -277,17 +277,17 @@ namespace AngelGuardian.Enemies
                 moveDirection = direction;
 
                 float speed = moveSpeed * difficultySpeedModifier;
-                rb.linearVelocity = direction * speed;
+                rb.velocity = direction * speed;
 
                 UpdateFacing(direction.x);
             }
             else if (currentState == EnemyState.Idle)
             {
-                rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, Time.fixedDeltaTime * 5f);
+                rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, Time.fixedDeltaTime * 5f);
             }
             else if (currentState == EnemyState.Attacking)
             {
-                rb.linearVelocity = Vector2.Lerp(rb.linearVelocity, Vector2.zero, Time.fixedDeltaTime * 10f);
+                rb.velocity = Vector2.Lerp(rb.velocity, Vector2.zero, Time.fixedDeltaTime * 10f);
             }
         }
 
@@ -300,7 +300,7 @@ namespace AngelGuardian.Enemies
 
             Vector2 direction = (targetPosition - rb.position).normalized;
             moveDirection = direction;
-            rb.linearVelocity = direction * moveSpeed * difficultySpeedModifier * speedMultiplier;
+            rb.velocity = direction * moveSpeed * difficultySpeedModifier * speedMultiplier;
             UpdateFacing(direction.x);
         }
 
@@ -311,7 +311,7 @@ namespace AngelGuardian.Enemies
         {
             if (rb != null)
             {
-                rb.linearVelocity = Vector2.zero;
+                rb.velocity = Vector2.zero;
             }
             moveDirection = Vector2.zero;
         }
@@ -738,7 +738,7 @@ namespace AngelGuardian.Enemies
             if (enemyCollider != null) enemyCollider.enabled = true;
             if (rb != null)
             {
-                rb.linearVelocity = Vector2.zero;
+                rb.velocity = Vector2.zero;
                 rb.angularVelocity = 0f;
             }
 

@@ -565,7 +565,7 @@ namespace AngelGuardian.Enemies
                 OnEnemySpawned?.Invoke(enemy);
 
                 // 注册到全局击杀事件
-                EnemyBase.OnEnemyKilled += HandleEnemyKilled;
+                AngelGuardian.Enemies.EnemyBase.OnEnemyKilled += HandleEnemyKilled;
             }
 
             return enemy;

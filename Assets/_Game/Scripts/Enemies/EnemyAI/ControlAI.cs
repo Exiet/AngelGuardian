@@ -127,7 +127,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                 Rigidbody2D targetRb = hit.GetComponent<Rigidbody2D>();
                 if (targetRb != null)
                 {
-                    float speed = targetRb.linearVelocity.magnitude;
+                    float speed = targetRb.velocity.magnitude;
                     if (speed > highestSpeed)
                     {
                         highestSpeed = speed;
@@ -172,8 +172,8 @@ namespace AngelGuardian.Enemies.EnemyAI
             }
             else if (targetRb != null)
             {
-                debuff.originalSpeed = targetRb.linearVelocity.magnitude;
-                targetRb.linearVelocity *= (1f - slowAmount);
+                debuff.originalSpeed = targetRb.velocity.magnitude;
+                targetRb.velocity *= (1f - slowAmount);
             }
 
             // 减速特效
