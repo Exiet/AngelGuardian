@@ -937,7 +937,7 @@ namespace AngelGuardian.Core
         {
             Debug.Log($"[CollectionUI] Cards: {CountUnlockedCards()}/{TOTAL_CARDS} | " +
                       $"Weapons: {CountUnlockedWeapons()}/{TOTAL_WEAPONS} | " +
-                      $"Filter: {_currentFilter} | Sort: {_currentSort} | Tab: {_showingCards ? "Cards" : "Weapons"}");
+                      "Filter: " + _currentFilter.ToString() + " | Sort: " + _currentSort.ToString() + " | Tab: " + (_showingCards ? "Cards" : "Weapons"));
         }
 
         [ContextMenu("Unlock All (Debug)")]
