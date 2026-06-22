@@ -87,10 +87,10 @@ namespace AngelGuardian.Core
     public struct SoftLimits
     {
         [Tooltip("弹幕上限")]
-        public int maxProjectiles;
+        public int MaxProjectiles;
 
         [Tooltip("武器上限")]
-        public int maxWeapons;
+        public int MaxWeapons;
 
         [Tooltip("连携冷却下限(秒)")]
         public float minComboCooldown;
@@ -210,8 +210,8 @@ namespace AngelGuardian.Core
         [Header("Soft Limits")]
         [SerializeField] private SoftLimits _softLimits = new SoftLimits
         {
-            maxProjectiles = 45,
-            maxWeapons = 6,
+            MaxProjectiles = 45,
+            MaxWeapons = 6,
             minComboCooldown = 1.0f,
             mobileEnemyCap = 300,
             pcEnemyCap = 600

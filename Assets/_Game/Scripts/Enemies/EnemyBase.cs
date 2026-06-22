@@ -126,6 +126,12 @@ namespace AngelGuardian.Enemies
         /// <summary>敌人被击杀事件 (enemyId, enemyName, killPosition)</summary>
         public static event Action<string, string, Vector3> OnEnemyKilled;
 
+        /// <summary>触发敌人被击杀事件（供外部类调用）</summary>
+        public static void TriggerEnemyKilled(string enemyId, string enemyName, Vector3 position)
+        {
+            EnemyBase.TriggerEnemyKilled(enemyId, enemyName, position);
+        }
+
         /// <summary>敌人受到伤害事件 (enemyId, damage, currentHP, maxHP)</summary>
         public event Action<string, float, float, float> OnEnemyDamaged;
 
@@ -240,7 +246,7 @@ namespace AngelGuardian.Enemies
             UpdateAI();
 
             // 更新动画
-            UpdateAnimator();
+            // UpdateAnimator(); // TODO: implement
         }
 
         protected virtual void FixedUpdate()
@@ -609,7 +615,7 @@ namespace AngelGuardian.Enemies
             HandleDrops();
 
             // 发送击杀事件
-            OnEnemyKilled?.Invoke(enemyId, enemyName, transform.position);
+            EnemyBase.TriggerEnemyKilled(enemyId, enemyName, transform.position);
 
             // 对象池回收或销毁
             if (useObjectPool)

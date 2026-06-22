@@ -60,7 +60,7 @@ namespace AngelGuardian.Player
         public int EquippedWeaponCount => _equippedWeapons.Count;
 
         /// <summary>最大武器数量</summary>
-        public int MaxWeapons => _attributes != null ? _attributes.maxWeapons : 6;
+        public int MaxWeapons => _attributes != null ? _attributes.MaxWeapons : 6;
 
         #endregion
 
@@ -73,7 +73,7 @@ namespace AngelGuardian.Player
         public int ActiveProjectileCount => _activeProjectiles.Count;
 
         /// <summary>最大投射物数量</summary>
-        public int MaxProjectiles => _attributes != null ? _attributes.maxProjectiles : 45;
+        public int MaxProjectiles => _attributes != null ? _attributes.MaxProjectiles : 45;
 
         #endregion
 

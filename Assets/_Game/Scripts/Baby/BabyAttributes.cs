@@ -15,7 +15,7 @@ namespace AngelGuardian.Baby
 
         [Header("=== Visible Attributes ===")]
 
-        [SerializeField] private float _babyMaxMentalPower = 100f;
+        [SerializeField] private float _BabyMaxMentalPower = 100f;
         [SerializeField] private float _babyRegenPerSec = 0f;
         [SerializeField] private float _babyMoveSpeed = 60f;
         [SerializeField] private float _babyDamageReduction = 0f;
@@ -67,7 +67,7 @@ namespace AngelGuardian.Baby
         #region ─── Properties ────────────────────────────────
 
         // Visible
-        public float BabyMaxMentalPower   => _babyMaxMentalPower;
+        public float BabyMaxMentalPower   => _BabyMaxMentalPower;
         public float BabyRegenPerSec      => _babyRegenPerSec;
         public float BabyMoveSpeed        => _babyMoveSpeed;
         public float BabyDamageReduction  => _babyDamageReduction;
@@ -100,10 +100,10 @@ namespace AngelGuardian.Baby
             private set
             {
                 float old = _currentMentalHP;
-                _currentMentalHP = Mathf.Clamp(value, 0f, _babyMaxMentalPower);
+                _currentMentalHP = Mathf.Clamp(value, 0f, _BabyMaxMentalPower);
 
                 // 检测死亡门槛
-                float deathGate = _babyMaxMentalPower * _deathGateThreshold;
+                float deathGate = _BabyMaxMentalPower * _deathGateThreshold;
                 _deathGateActive = _currentMentalHP <= deathGate && _currentMentalHP > 0f;
 
                 // 归零时触发事件
@@ -115,8 +115,8 @@ namespace AngelGuardian.Baby
         }
 
         /// <summary>精神力百分比 [0, 1]</summary>
-        public float MentalHPPercent => _babyMaxMentalPower > 0f
-            ? _currentMentalHP / _babyMaxMentalPower
+        public float MentalHPPercent => _BabyMaxMentalPower > 0f
+            ? _currentMentalHP / _BabyMaxMentalPower
             : 0f;
 
         /// <summary>是否处于死亡门槛保护</summary>
@@ -138,18 +138,18 @@ namespace AngelGuardian.Baby
             var config = GameManager.Instance?.Config;
             if (config != null)
             {
-                _babyMaxMentalPower = config.babyMaxMentalPower;
+                _BabyMaxMentalPower = config.babyMaxMentalPower;
                 _emotionTickRate = config.emotionTickRate;
             }
 
-            _currentMentalHP = _babyMaxMentalPower;
+            _currentMentalHP = _BabyMaxMentalPower;
             _currentShield = _babyShield;
         }
 
         private void Update()
         {
             // 精神力恢复
-            if (_babyRegenPerSec > 0f && _currentMentalHP < _babyMaxMentalPower)
+            if (_babyRegenPerSec > 0f && _currentMentalHP < _BabyMaxMentalPower)
             {
                 _regenTimer += Time.deltaTime;
                 if (_regenTimer >= 1f)
@@ -322,7 +322,7 @@ namespace AngelGuardian.Baby
             return new Dictionary<string, float>
             {
                 ["currentMentalHP"]       = _currentMentalHP,
-                ["maxMentalPower"]        = _babyMaxMentalPower,
+                ["maxMentalPower"]        = _BabyMaxMentalPower,
                 ["mentalPercent"]         = MentalHPPercent,
                 ["regenPerSec"]           = _babyRegenPerSec,
                 ["moveSpeed"]             = _babyMoveSpeed,

@@ -63,12 +63,12 @@ namespace AngelGuardian.Core
         [Header("Projectiles")]
         [Tooltip("Absolute hard cap on total active projectiles in the scene.")]
         [Range(10, 200)]
-        public int maxProjectiles = 45;
+        public int MaxProjectiles = 45;
 
         [Header("Weapons")]
         [Tooltip("Maximum number of weapons the player can hold simultaneously.")]
         [Range(1, 12)]
-        public int maxWeapons = 6;
+        public int MaxWeapons = 6;
 
         [Header("Combo")]
         [Tooltip("Minimum cooldown in seconds between combo activations.")]
@@ -83,7 +83,7 @@ namespace AngelGuardian.Core
         [Header("========== Baby / Mental Settings ==========")]
         [Tooltip("Maximum mental power (HP) for the Baby.")]
         [Range(10, 500)]
-        public float babyMaxMentalPower = 100f;
+        public float BabyMaxMentalPower = 100f;
 
         [Tooltip("Interval in seconds between emotion state refresh ticks.")]
         [Range(0.1f, 5f)]
@@ -143,15 +143,15 @@ namespace AngelGuardian.Core
             destructibleDensity = Mathf.Clamp01(destructibleDensity);
 
             // Positive caps
-            maxProjectiles = Mathf.Max(1, maxProjectiles);
-            maxWeapons = Mathf.Max(1, maxWeapons);
+            MaxProjectiles = Mathf.Max(1, MaxProjectiles);
+            MaxWeapons = Mathf.Max(1, MaxWeapons);
             enemyCountCap = Mathf.Max(1, enemyCountCap);
             maxCards = Mathf.Max(1, maxCards);
 
             // Positive timers / rates
             comboCdMin = Mathf.Max(0f, comboCdMin);
             emotionTickRate = Mathf.Max(0.01f, emotionTickRate);
-            babyMaxMentalPower = Mathf.Max(1f, babyMaxMentalPower);
+            BabyMaxMentalPower = Mathf.Max(1f, BabyMaxMentalPower);
             expGrowthMultiplier = Mathf.Max(0.01f, expGrowthMultiplier);
         }
     }

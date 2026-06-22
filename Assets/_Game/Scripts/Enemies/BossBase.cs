@@ -505,6 +505,12 @@ namespace AngelGuardian.Enemies
         /// <summary>屏幕震动事件（全局）</summary>
         public static event Action<float, float> ScreenShakeTrigger;
 
+        /// <summary>触发屏幕震动（供外部类调用）</summary>
+        public static void TriggerScreenShake(float intensity, float duration)
+        {
+            ScreenShakeTrigger?.Invoke(intensity, duration);
+        }
+
         #endregion
     }
 }

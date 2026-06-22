@@ -523,7 +523,7 @@ namespace AngelGuardian.Baby
         public string GetDebugInfo()
         {
             return $"[BabyAI] State: {_emotion.CurrentState} | " +
-                   $"Mental: {_attributes.CurrentMentalHP:F0}/{_attributes.babyMaxMentalPower} | " +
+                   $"Mental: {_attributes.CurrentMentalHP:F0}/{_attributes.BabyMaxMentalPower} | " +
                    $"Awaken: {_attributes.BabyAwakenCharge:F0}% | " +
                    $"ConsecHits: {_consecutiveHits} | " +
                    $"DistToAngel: {GetDistanceToAngel():F0}";

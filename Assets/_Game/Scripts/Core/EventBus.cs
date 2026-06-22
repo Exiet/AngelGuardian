@@ -191,7 +191,7 @@ namespace AngelGuardian.Core
         #region Public API – Convenience Fire Methods
 
         public void FireEnemyKilled(GameObject enemy, Vector3 position)
-            => OnEnemyKilled?.Invoke(enemy, position);
+            => EnemyBase.TriggerEnemyKilled(enemy, position);
 
         public void FireLevelUp(int newLevel)
             => OnLevelUp?.Invoke(newLevel);

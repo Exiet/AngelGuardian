@@ -50,8 +50,8 @@ namespace AngelGuardian.Player
         [SerializeField] private float _expGrowthMultiplier = 1.0f;
         [SerializeField] private float _terrainAwakening = 0f;
         [SerializeField] private float _minDPS = 10f;
-        [SerializeField] private int _maxProjectiles = 45;
-        [SerializeField] private int _maxWeapons = 6;
+        [SerializeField] private int _MaxProjectiles = 45;
+        [SerializeField] private int _MaxWeapons = 6;
 
         #endregion
 
@@ -103,8 +103,8 @@ namespace AngelGuardian.Player
         public float ExpGrowthMultiplier  => GetEffectiveValue(nameof(_expGrowthMultiplier),   _expGrowthMultiplier);
         public float TerrainAwakening     => GetEffectiveValue(nameof(_terrainAwakening),      _terrainAwakening);
         public float MinDPS               => GetEffectiveValue(nameof(_minDPS),                _minDPS);
-        public int   MaxProjectiles       => Mathf.RoundToInt(GetEffectiveValue(nameof(_maxProjectiles), _maxProjectiles));
-        public int   MaxWeapons           => Mathf.RoundToInt(GetEffectiveValue(nameof(_maxWeapons),     _maxWeapons));
+        public int   MaxProjectiles       => Mathf.RoundToInt(GetEffectiveValue(nameof(_MaxProjectiles), _MaxProjectiles));
+        public int   MaxWeapons           => Mathf.RoundToInt(GetEffectiveValue(nameof(_MaxWeapons),     _MaxWeapons));
 
         /// <summary>
         /// 获取原始基础值（不含加成和修改器）
@@ -334,8 +334,8 @@ namespace AngelGuardian.Player
                 ["expGrowthMultiplier"]  = ExpGrowthMultiplier,
                 ["terrainAwakening"]     = TerrainAwakening,
                 ["minDPS"]               = MinDPS,
-                ["maxProjectiles"]       = MaxProjectiles,
-                ["maxWeapons"]           = MaxWeapons,
+                ["MaxProjectiles"]       = MaxProjectiles,
+                ["MaxWeapons"]           = MaxWeapons,
             };
         }
 

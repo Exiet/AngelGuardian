@@ -203,7 +203,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                 animator.SetTrigger("Attack");
 
             // 屏幕轻微震动
-            BossBase.ScreenShakeTrigger?.Invoke(0.1f, 0.2f);
+            BossBase.TriggerScreenShake(0.1f, 0.2f);
 
             Debug.Log($"[{enemyName}] 触手攻击! 位置: {warningTargetPosition}");
         }
@@ -243,7 +243,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                     Destroy(undergroundStateEffect);
 
                 // 发送最终击杀事件
-                OnEnemyKilled?.Invoke(enemyId, enemyName, transform.position);
+                EnemyBase.TriggerEnemyKilled(enemyId, enemyName, transform.position);
             }
         }
 

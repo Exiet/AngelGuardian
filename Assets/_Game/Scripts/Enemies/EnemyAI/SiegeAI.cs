@@ -192,7 +192,7 @@ namespace AngelGuardian.Enemies.EnemyAI
                 animator.SetTrigger("SiegeAttack");
 
             // 屏幕震动
-            BossBase.ScreenShakeTrigger?.Invoke(0.15f, 0.3f);
+            BossBase.TriggerScreenShake(0.15f, 0.3f);
         }
 
         /// <summary>
@@ -234,7 +234,7 @@ namespace AngelGuardian.Enemies.EnemyAI
             }
 
             // 全屏震动
-            BossBase.ScreenShakeTrigger?.Invoke(0.5f, 0.8f);
+            BossBase.TriggerScreenShake(0.5f, 0.8f);
 
             Debug.Log($"[{enemyName}] 地面践踏! 半径{groundSlamRadius}, 伤害{groundSlamDamage}");
         }

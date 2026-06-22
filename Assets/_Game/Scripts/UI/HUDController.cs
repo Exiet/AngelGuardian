@@ -373,7 +373,7 @@ namespace AngelGuardian.UI
             var babyAttr = FindObjectOfType<BabyAttributes>();
             if (babyAttr == null) return;
 
-            float maxHP = babyAttr.babyMaxMentalPower;
+            float maxHP = babyAttr.BabyMaxMentalPower;
             float currentHP = babyAttr.CurrentMentalHP;
             float percent = babyAttr.MentalHPPercent;
 
@@ -672,7 +672,7 @@ namespace AngelGuardian.UI
             if (cm == null) return;
 
             int current = cm.CardCount;
-            int max = cm.maxCards;
+            int max = cm.MaxCards;
             bool isFull = cm.IsFull;
 
             if (_cardCountText != null)
