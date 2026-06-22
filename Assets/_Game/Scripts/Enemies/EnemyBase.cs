@@ -122,7 +122,7 @@ namespace AngelGuardian.Enemies
 
         #region 事件
 
-        [Header("=== 事件 ===")]
+        // === 事件 ===
         /// <summary>敌人被击杀事件 (enemyId, enemyName, killPosition)</summary>
         public static event Action<string, string, Vector3> OnEnemyKilled;
 
