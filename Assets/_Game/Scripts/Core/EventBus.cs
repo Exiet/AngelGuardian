@@ -195,7 +195,7 @@ namespace AngelGuardian.Core
         {
             var eb = enemy.GetComponent<EnemyBase>();
             if (eb != null)
-                EnemyBase.TriggerEnemyKilled(eb.enemyId, eb.enemyName, position);
+                EnemyBase.TriggerEnemyKilled(eb.EnemyId, eb.EnemyName, position);
         }
 
         public void FireLevelUp(int newLevel)
