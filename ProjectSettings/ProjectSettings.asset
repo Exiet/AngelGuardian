@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!129 &1
+PlayerSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 23
+  productName: Angel Guardian
+  companyName: AngelGuardian
+  defaultScreenWidth: 720
+  defaultScreenHeight: 1280
+  defaultScreenWidthWeb: 960
+  defaultScreenHeightWeb: 600
+  m_StereoRenderingPath: 0
+  m_ActiveColorSpace: 1
+  androidTargetArchitectures: 2
+  androidBuildApkPerCpuArchitecture: 0
+  m_BuildTargetGroupIcons: []
+  m_BuildTargetPlatformIcons: []
+  m_BuildTargetBatching:
+  - m_BuildTarget: Standalone
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
+  - m_BuildTarget: Android
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
+  - m_BuildTarget: iPhone
+    m_StaticBatching: 1
+    m_DynamicBatching: 1
+  m_SupportedAspectRatios:
+    4_3: 1
+    5_4: 1
+    16_9: 1
+    16_10: 1
+    Others: 1
+  scriptingDefineSymbols: {}
+  apiCompatibilityLevelPerPlatform:
+    Standalone: 6
+  m_RenderingPath: 1
+  m_MobileRenderingPath: 1
+  m_ActiveBuildTarget: 0

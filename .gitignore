@@ -1,0 +1,31 @@
+[AngelGuardian]
+# Unity 天使护婴 - Roguelike地宫冒险游戏
+# 
+# 核心差异化:
+# - 天使永生不死，保护婴儿
+# - BSP程序化迷宫 + 地形活化
+# - 70张卡牌 + 18把武器 + 8组连携
+# - 婴儿情感状态机 (好奇/恐惧/愤怒/疲惫/觉醒)
+# - 指数级成长曲线
+
+# Unity generated
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# IDE
+.idea/
+.vs/
+.vscode/
+*.sln
+*.csproj
+*.unityproj
+*.userprefs
+
+# OS
+.DS_Store
+Thumbs.db

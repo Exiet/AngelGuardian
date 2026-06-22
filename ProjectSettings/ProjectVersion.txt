@@ -1,0 +1,4 @@
+{
+  "m_EditorVersion": "2022.3.20f1",
+  "m_EditorVersionWithRevision": "2022.3.20f1 (8c38baf2d39c)"
+}
