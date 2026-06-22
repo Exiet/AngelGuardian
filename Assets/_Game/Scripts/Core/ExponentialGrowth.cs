@@ -371,14 +371,14 @@ namespace AngelGuardian.Core
             var config = GameManager.Instance?.Config;
             if (config != null)
             {
-                _softLimits.MaxProjectiles = config.MaxProjectiles;
-                _softLimits.MaxWeapons = config.MaxWeapons;
+                _softLimits.maxProjectiles = config.maxProjectiles;
+                _softLimits.maxWeapons = config.maxWeapons;
                 _softLimits.minComboCooldown = config.comboCdMin;
                 _softLimits.pcEnemyCap = config.enemyCountCap;
             }
 
-            Debug.Log($"[ExponentialGrowth] Soft limits: Projectiles={_softLimits.MaxProjectiles}, " +
-                      $"Weapons={_softLimits.MaxWeapons}, ComboCD={_softLimits.minComboCooldown}s, " +
+            Debug.Log($"[ExponentialGrowth] Soft limits: Projectiles={_softLimits.maxProjectiles}, " +
+                      $"Weapons={_softLimits.maxWeapons}, ComboCD={_softLimits.minComboCooldown}s, " +
                       $"EnemyCap={_softLimits.CurrentPlatformEnemyCap}");
         }
 
@@ -496,7 +496,7 @@ namespace AngelGuardian.Core
         /// <returns>是否超过上限</returns>
         public bool IsProjectileOverLimit(int count)
         {
-            return count > _softLimits.MaxProjectiles;
+            return count > _softLimits.maxProjectiles;
         }
 
         /// <summary>
@@ -506,7 +506,7 @@ namespace AngelGuardian.Core
         /// <returns>是否超过上限</returns>
         public bool IsWeaponOverLimit(int count)
         {
-            return count > _softLimits.MaxWeapons;
+            return count > _softLimits.maxWeapons;
         }
 
         /// <summary>
@@ -532,7 +532,7 @@ namespace AngelGuardian.Core
         /// </summary>
         public int GetProjectileCap()
         {
-            return _softLimits.MaxProjectiles;
+            return _softLimits.maxProjectiles;
         }
 
         /// <summary>
@@ -540,7 +540,7 @@ namespace AngelGuardian.Core
         /// </summary>
         public int GetWeaponCap()
         {
-            return _softLimits.MaxWeapons;
+            return _softLimits.maxWeapons;
         }
 
         /// <summary>
@@ -654,7 +654,7 @@ namespace AngelGuardian.Core
             Debug.Log($"[ExponentialGrowth] Level: {_playerLevel} | Stage: {_currentStage}({_stageData[(int)_currentStage].name}) | Wave: {_currentWave}\n" +
                       $"  AttributeMult: {GetAttributeMultiplier():F2} | EnemyMult: {GetEnemyMultiplier():F2} | MentalMult: {GetMentalPressureMultiplier():F2}\n" +
                       $"  RarityWeights: {GetDropRarityWeights()}\n" +
-                      $"  SoftLimits: Proj={_softLimits.MaxProjectiles}, Weapons={_softLimits.MaxWeapons}, " +
+                      $"  SoftLimits: Proj={_softLimits.maxProjectiles}, Weapons={_softLimits.maxWeapons}, " +
                       $"ComboCD={_softLimits.minComboCooldown}s, EnemyCap={_softLimits.CurrentPlatformEnemyCap}\n" +
                       $"  MergedDamagePool: {_mergedDamagePool:F2}");
         }

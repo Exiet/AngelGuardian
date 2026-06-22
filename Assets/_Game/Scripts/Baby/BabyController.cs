@@ -129,7 +129,7 @@ namespace AngelGuardian.Baby
             // 从配置读取
             if (GameManager.Instance?.Config != null)
             {
-                _maxDistanceFromAngel = GameManager.Instance.Config.MapSize * 0.083f; // ~250/3000
+                _maxDistanceFromAngel = GameManager.Instance.Config.mapSize * 0.083f; // ~250/3000
             }
         }
 

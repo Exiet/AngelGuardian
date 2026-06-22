@@ -294,7 +294,7 @@ namespace AngelGuardian.Cards
                     CardInstance instance = cm.GetCard(card.cardId);
                     return instance.CanUpgrade;
                 }
-                return cm.CardCount < cm.MaxCards; // Can add new card if not full
+                return cm.CardCount < cm.maxCards; // Can add new card if not full
             }).ToList();
         }
 

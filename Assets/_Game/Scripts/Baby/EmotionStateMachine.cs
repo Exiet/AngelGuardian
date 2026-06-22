@@ -185,7 +185,7 @@ namespace AngelGuardian.Baby
             // 从配置读取tick间隔
             if (GameManager.Instance?.Config != null)
             {
-                _tickInterval = GameManager.Instance.Config.EmotionTickRate;
+                _tickInterval = GameManager.Instance.Config.emotionTickRate;
             }
 
             // 初始化觉醒时长（随等级）

@@ -140,7 +140,7 @@ namespace AngelGuardian.Player
             // 从 GameConfig 读取地图大小
             if (GameManager.Instance?.Config != null)
             {
-                _mapSize = GameManager.Instance.Config.MapSize;
+                _mapSize = GameManager.Instance.Config.mapSize;
             }
         }
 

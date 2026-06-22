@@ -815,7 +815,7 @@ namespace AngelGuardian.Dungeon
         private void ApplyGameConfig(GameConfig config)
         {
             // 从GameConfig读取参数(如果存在)
-            if (config.MapSize > 0) mapSize = config.MapSize;
+            if (config.mapSize > 0) mapSize = config.mapSize;
             if (config.maxSplitDepth > 0) maxSplitDepth = config.maxSplitDepth;
             if (config.targetRoomCount > 0) targetRoomCount = config.targetRoomCount;
             if (config.minRoomSize > 0) minRoomSize = config.minRoomSize;

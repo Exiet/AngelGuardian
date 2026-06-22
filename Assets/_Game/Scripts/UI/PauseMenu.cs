@@ -467,7 +467,7 @@ namespace AngelGuardian.UI
 
             var cards = cm.GetAllCards();
             if (_skillCountText != null)
-                _skillCountText.text = $"持有卡牌: {cards.Count}/{cm.MaxCards}";
+                _skillCountText.text = $"持有卡牌: {cards.Count}/{cm.maxCards}";
 
             foreach (var card in cards)
             {

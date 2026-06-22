@@ -139,7 +139,7 @@ namespace AngelGuardian.Baby
             if (config != null)
             {
                 _babyMaxMentalPower = config.babyMaxMentalPower;
-                _emotionTickRate = config.EmotionTickRate;
+                _emotionTickRate = config.emotionTickRate;
             }
 
             _currentMentalHP = _babyMaxMentalPower;
