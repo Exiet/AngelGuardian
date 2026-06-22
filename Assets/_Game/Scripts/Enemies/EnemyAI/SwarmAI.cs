@@ -356,10 +356,9 @@ namespace AngelGuardian.Enemies.EnemyAI
             base.Die();
         }
 
-        protected override void OnDestroy()
+        private void OnDestroy()
         {
             allSwarmMembers.Remove(this);
-            base.OnDestroy();
         }
     }
 }
