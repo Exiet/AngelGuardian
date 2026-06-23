@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using AngelGuardian.Core;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -824,7 +825,6 @@ namespace AngelGuardian.Dungeon
             }
             if (config.DoorProbability > 0) doorPlacementChance = config.DoorProbability;
             if (config.SafeStartRadius > 0) safeZoneRadius = config.SafeStartRadius;
-            if (config.safeZoneRadius > 0) safeZoneRadius = config.safeZoneRadius;
         }
 
         private void ClearResults()
@@ -916,18 +916,4 @@ namespace AngelGuardian.Dungeon
         #endregion
     }
 
-    /// <summary>
-    /// 游戏配置 —— 用于从外部传入BSP生成参数
-    /// </summary>
-    [System.Serializable]
-    public class GameConfig
-    {
-        public int mapSize = 2048;
-        public int maxSplitDepth = 6;
-        public int targetRoomCount = 10;
-        public int minRoomSize = 160;
-        public int corridorWidth = 150;
-        public float doorFrequency = 0.3f;
-        public float safeZoneRadius = 300f;
-    }
 }
