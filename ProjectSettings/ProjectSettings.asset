@@ -12,6 +12,7 @@ PlayerSettings:
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 1
+  m_ActiveInputHandler: 1
   androidTargetArchitectures: 2
   androidBuildApkPerCpuArchitecture: 0
   m_BuildTargetGroupIcons: []
@@ -38,3 +39,37 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   m_ActiveBuildTarget: 0
+--- !u!287 &2
+EditorSettings:
+  m_ObjectHideFlags: 0
+  serializedVersion: 9
+  m_ExternalVersionControlSupport: Visible Meta Files
+  m_SerializationMode: 2
+  m_LineEndingsForNewScripts: 2
+  m_DefaultBehaviorMode: 1
+  m_PrefabRegularEnvironment: {fileID: 0}
+  m_PrefabUIEnvironment: {fileID: 0}
+  m_SpritePackerMode: 0
+  m_SpritePackerPaddingPower: 1
+  m_EtcTextureCompressorBehavior: 1
+  m_EtcTextureFastCompressor: 1
+  m_EtcTextureNormalCompressor: 2
+  m_EtcTextureBestCompressor: 4
+  m_ProjectGenerationIncludedExtensions: txt;xml;fnt;cd;asmdef;rsp;asmref
+  m_ProjectGenerationRootNamespace: AngelGuardian
+  m_CollabEditorSettings:
+    m_ObjectHideFlags: 0
+    inProgressEnabled: 1
+  m_EnableTextureStreamingInEditMode: 1
+  m_EnableTextureStreamingInPlayMode: 1
+  m_AsyncShaderCompilation: 1
+  m_EnterPlayModeOptionsEnabled: 0
+  m_EnterPlayModeOptions: 3
+  m_GameObjectNamingDigits: 1
+  m_GameObjectNamingScheme: 0
+  m_AssetNamingUsesSpace: 1
+  m_UseLegacyProbeSampleCount: 0
+  m_SerializeInlineMappingsOnOneLine: 1
+  m_AllowAttachedDebuggingOfEditor: 1
+  m_BuildLocation: 1
+  m_EnableEditorLocalization: 0

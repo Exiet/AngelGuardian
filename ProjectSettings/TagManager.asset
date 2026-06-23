@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Player
+  - Baby
+  - Enemy
+  - Boss
+  - Projectile
+  - Weapon
+  - Pickup
+  - Destructible
+  - Door
+  - SafeZone
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Baby
+  - Enemy
+  - Projectile
+  - Pickup
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Background
+    uniqueID: 2918528679
+    locked: 0
+  - name: Ground
+    uniqueID: 2264936545
+    locked: 0
+  - name: Entities
+    uniqueID: 3394139491
+    locked: 0
+  - name: Player
+    uniqueID: 3636682133
+    locked: 0
+  - name: Projectiles
+    uniqueID: 320756812
+    locked: 0
+  - name: UI
+    uniqueID: 2142431165
+    locked: 0
+  - name: Effects
+    uniqueID: 2937489407
+    locked: 0
