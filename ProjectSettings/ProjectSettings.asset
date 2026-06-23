@@ -12,7 +12,7 @@ PlayerSettings:
   defaultScreenHeightWeb: 600
   m_StereoRenderingPath: 0
   m_ActiveColorSpace: 1
-  m_ActiveInputHandler: 0
+  m_ActiveInputHandler: 2
   androidTargetArchitectures: 2
   androidBuildApkPerCpuArchitecture: 0
   m_BuildTargetGroupIcons: []
