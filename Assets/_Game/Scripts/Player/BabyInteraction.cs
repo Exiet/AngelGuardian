@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+#endif
 using AngelGuardian.Core;
 using AngelGuardian.Dungeon;
 
@@ -114,6 +116,20 @@ namespace AngelGuardian.Player
             if (_wingsCooldownTimer > 0f)
                 _wingsCooldownTimer -= Time.deltaTime;
 
+#if !ENABLE_INPUT_SYSTEM
+            // 旧版Input降级：翅膀（空格键长按）
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!_isWingsActive && _wingsCooldownTimer <= 0f)
+                    StartWings();
+            }
+            // 旧版交互键（E键）
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                InteractWithDoor();
+            }
+#endif
+
             // 检测门交互
             DetectDoorInteraction();
 
@@ -202,6 +218,7 @@ namespace AngelGuardian.Player
 
         #region ─── Protective Wings (保护翅膀) ───────────────
 
+#if ENABLE_INPUT_SYSTEM
         /// <summary>
         /// 翅膀输入（长按空格/暂停键）
         /// </summary>
@@ -234,6 +251,7 @@ namespace AngelGuardian.Player
             float holdDuration = value.Get<float>();
             // Input System 的 Hold interaction 可以在 Input Actions 中配置
         }
+#endif
 
         /// <summary>
         /// 激活保护翅膀
@@ -417,6 +435,7 @@ namespace AngelGuardian.Player
 
         #region ─── Input Actions ─────────────────────────────
 
+#if ENABLE_INPUT_SYSTEM
         /// <summary>
         /// 交互输入（E键/移动端按钮）—— 用于手动门交互
         /// </summary>
@@ -427,6 +446,7 @@ namespace AngelGuardian.Player
                 InteractWithDoor();
             }
         }
+#endif
 
         #endregion
 

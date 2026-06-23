@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using UnityEngine;
+#if ENABLE_INPUT_SYSTEM
 using UnityEngine.InputSystem;
+#endif
 using AngelGuardian.Core;
 
 namespace AngelGuardian.Player
@@ -146,6 +148,20 @@ namespace AngelGuardian.Player
 
         private void Update()
         {
+            // 旧版Input降级：移动输入
+#if !ENABLE_INPUT_SYSTEM
+            float h = Input.GetAxisRaw("Horizontal");
+            float v = Input.GetAxisRaw("Vertical");
+            _moveInput = new Vector2(h, v);
+            
+            // 旧版冲刺（LeftShift）
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+                _dashRequested = true;
+#endif
+
+            // 更新鼠标瞄准
+            UpdateMouseAim();
+
             // 更新冲刺冷却
             if (_dashCooldownTimer > 0f)
                 _dashCooldownTimer -= Time.deltaTime;
@@ -187,6 +203,7 @@ namespace AngelGuardian.Player
 
         #region ─── Input System Callbacks ────────────────────
 
+#if ENABLE_INPUT_SYSTEM
         /// <summary>
         /// 移动输入（WASD 或左虚拟摇杆）
         /// </summary>
@@ -227,6 +244,7 @@ namespace AngelGuardian.Player
                 _dashRequested = true;
             }
         }
+#endif
 
         /// <summary>
         /// 每帧从 Camera 更新鼠标世界坐标（在 Update 中由外部或自身调用）
@@ -235,15 +253,25 @@ namespace AngelGuardian.Player
         {
             if (Camera.main == null) return;
 
+#if ENABLE_INPUT_SYSTEM
             Vector3 mouseScreen = Mouse.current?.position.ReadValue() ?? Vector3.zero;
             Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreen.x, mouseScreen.y, -Camera.main.transform.position.z));
             _mouseWorldPos = new Vector2(mouseWorld.x, mouseWorld.y);
 
-            // 如果有鼠标移动，切换到鼠标瞄准模式
             if (Mouse.current?.delta.ReadValue().magnitude > 0.1f)
             {
                 _useMouseAim = true;
             }
+#else
+            Vector3 mouseScreen = Input.mousePosition;
+            Vector3 mouseWorld = Camera.main.ScreenToWorldPoint(new Vector3(mouseScreen.x, mouseScreen.y, -Camera.main.transform.position.z));
+            _mouseWorldPos = new Vector2(mouseWorld.x, mouseWorld.y);
+
+            if (Input.GetAxis("Mouse X") != 0 || Input.GetAxis("Mouse Y") != 0)
+            {
+                _useMouseAim = true;
+            }
+#endif
         }
 
         /// <summary>
