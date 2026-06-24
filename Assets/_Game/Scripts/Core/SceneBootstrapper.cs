@@ -80,7 +80,10 @@ namespace AngelGuardian.Core
             // 9. Audio
             CreateIfMissing<Audio.AudioManager>("[AudioManager]");
 
-            Debug.Log("  [9/9] 全部系统就绪 ✓");
+            // 10. Debug Visualizer
+            CreateIfMissing<DebugVisualizer>("[DebugVisualizer]");
+
+            Debug.Log("  [10/10] 全部系统就绪 ✓");
             Debug.Log("═══════════════════════════════════════");
         }
 
