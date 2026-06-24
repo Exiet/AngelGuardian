@@ -166,7 +166,7 @@ namespace AngelGuardian.Core
                         var corridorGo = new GameObject($"Corridor_{corridorIndex++}");
                         corridorGo.transform.SetParent(mapGo.transform);
 
-                        Vector2 mid = (start + end) * 0.5f;
+                        Vector2 mid = (Vector2)(start + end) * 0.5f;
                         corridorGo.transform.position = new Vector3(mid.x, mid.y, 0);
 
                         float width = Mathf.Abs(end.x - start.x) + 20;
