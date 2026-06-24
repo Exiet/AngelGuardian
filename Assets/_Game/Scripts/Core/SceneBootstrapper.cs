@@ -101,7 +101,16 @@ namespace AngelGuardian.Core
         {
             if (existing != null) return;
             var cam = Camera.main;
-            if (cam != null) return;
+            if (cam != null)
+            {
+                // 确保相机设置正确
+                cam.orthographic = true;
+                cam.orthographicSize = 1800f; // 足够看到 3000x3000 地图
+                cam.transform.position = new Vector3(0, 0, -10);
+                cam.backgroundColor = new Color(0.06f, 0.05f, 0.10f);
+                cam.clearFlags = CameraClearFlags.SolidColor;
+                return;
+            }
 
             var go = new GameObject("Main Camera");
             cam = go.AddComponent<Camera>();
@@ -109,7 +118,7 @@ namespace AngelGuardian.Core
             go.AddComponent<AudioListener>();
 
             cam.orthographic = true;
-            cam.orthographicSize = 800f;
+            cam.orthographicSize = 1800f;
             cam.transform.position = new Vector3(0, 0, -10);
             cam.backgroundColor = new Color(0.06f, 0.05f, 0.10f);
             cam.clearFlags = CameraClearFlags.SolidColor;

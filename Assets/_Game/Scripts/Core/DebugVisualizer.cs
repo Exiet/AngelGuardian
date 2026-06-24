@@ -68,32 +68,14 @@ namespace AngelGuardian.Core
 
         private void AddCircleSprite(GameObject go, Color color, float size, string label)
         {
-            // 创建 SpriteRenderer
             var sr = go.GetComponent<SpriteRenderer>();
-            if (sr == null)
-            {
-                sr = go.AddComponent<SpriteRenderer>();
-            }
-
-            // 创建圆形纹理
+            if (sr == null) sr = go.AddComponent<SpriteRenderer>();
+            
             sr.sprite = CreateCircleSprite(color);
-            sr.sortingLayerName = "Entities";
             sr.sortingOrder = 100;
-
-            // 调整大小
-            go.transform.localScale = Vector3.one * size;
-
-            // 添加标签文字
-            var labelGo = new GameObject($"{label}_Label");
-            labelGo.transform.SetParent(go.transform);
-            labelGo.transform.localPosition = new Vector3(0, size * 0.8f, 0);
-
-            var textMesh = labelGo.AddComponent<TextMesh>();
-            textMesh.text = label;
-            textMesh.fontSize = 20;
-            textMesh.color = Color.white;
-            textMesh.alignment = TextAlignment.Center;
-            textMesh.anchor = TextAnchor.MiddleCenter;
+            sr.drawMode = SpriteDrawMode.Sliced;
+            
+            go.transform.localScale = new Vector3(size, size, 1);
         }
 
         private Sprite CreateCircleSprite(Color color)
