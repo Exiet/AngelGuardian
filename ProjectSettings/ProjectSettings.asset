@@ -3,7 +3,7 @@
 --- !u!129 &1
 PlayerSettings:
   m_ObjectHideFlags: 0
-  serializedVersion: 23
+  serializedVersion: 25
   productName: Angel Guardian
   companyName: AngelGuardian
   defaultScreenWidth: 720
