@@ -68,7 +68,7 @@ namespace AngelGuardian.Core
             CreateBaby();
 
             // 6. Dungeon
-            var dungeonGo = CreateIfMissing<Dungeon.BSPGenerator>("[DungeonGenerator]");
+            var dungeonGo = CreateIfMissing<Dungeon.BSPGenerator>("[DungeonGenerator]").gameObject;
             dungeonGo.AddComponent<Dungeon.CorridorGenerator>();
 
             // 7. EnemySpawner
