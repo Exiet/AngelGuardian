@@ -3,30 +3,17 @@ using UnityEngine;
 namespace AngelGuardian.Core
 {
     /// <summary>
-    /// 全自动启动器 —— 零操作，Play即运行。
-    /// 
-    /// [RuntimeInitializeOnLoadMethod] 确保在任何场景加载后自动执行。
-    /// 你只需要：打开任意场景 → 点击 Play
+    /// 全自动启动器（备用方案）
+    /// 主启动逻辑已移至 GameManager.Awake()，确保一定执行。
     /// </summary>
     public static class AutoBootstrap
     {
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void OnGameStart()
         {
-            // 执行共享的启动逻辑
-            AutoBootstrapHelper.Bootstrap();
-
-            // 延迟启动游戏
-            var gm = GameManager.Instance;
-            gm.StartCoroutine(DelayedStart(gm));
-        }
-
-        private static System.Collections.IEnumerator DelayedStart(GameManager gm)
-        {
-            yield return null;
-            yield return null;
-            gm.StartGame();
-            Debug.Log("[AutoBootstrap] ▶ 游戏自动开始！");
+            // GameManager 的 Awake 已经调用了 AutoBootstrapHelper.Bootstrap()
+            // 这里不需要重复操作
+            Debug.Log("[AutoBootstrap] RuntimeInitializeOnLoad 触发");
         }
     }
 }

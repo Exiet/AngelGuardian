@@ -70,6 +70,13 @@ namespace AngelGuardian.Core
 
             _instance = this;
             DontDestroyOnLoad(gameObject);
+
+            // 自动启动游戏系统
+            if (_instance == this)
+            {
+                Debug.Log("[GameManager] Awake - 自动启动系统...");
+                AutoBootstrapHelper.Bootstrap(_config);
+            }
         }
 
         private void OnDestroy()
@@ -181,10 +188,21 @@ namespace AngelGuardian.Core
 
         private void Start()
         {
-            // Default to Loading state; StartGame() transitions to Playing.
             SetState(GameState.Loading);
             Time.timeScale = 1f;
             _gameSpeed = 1f;
+            
+            // 延迟1帧自动开始游戏
+            Invoke(nameof(AutoStart), 0.1f);
+        }
+
+        private void AutoStart()
+        {
+            if (_currentState == GameState.Loading)
+            {
+                Debug.Log("[GameManager] 自动开始游戏！");
+                StartGame();
+            }
         }
 
         private void Update()
